@@ -65,7 +65,7 @@ export function Chat() {
   console.log(messages);
 
   return (
-    <div className="w-full h-full flex flex-col p-4 gap-4">
+    <div className="w-full h-full flex flex-col p-3 sm:p-4 gap-4">
       <header className="h-7 flex items-center">
         <Profile></Profile>
       </header>
@@ -76,7 +76,9 @@ export function Chat() {
         ))}
       </section>
 
-      <form className="flex gap-2" onSubmit={sendMessage}>
+
+      <span ref={scroll}></span>
+      <form className="flex gap-2" onSubmit={sendMessage} scroll={scroll}>
         <input
           type="text"
           id="message"
